@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'car-inventory';
+  title = 'Mini Car Inventory';
+  addModel = function(){
+    alert('Hello World');
+  }
+
+  viewInventory = function(){
+    alert('Hello World');
+  }
 }

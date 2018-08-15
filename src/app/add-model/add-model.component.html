@@ -1,0 +1,44 @@
+<div class="container" id="addmodel">
+  <form #modelForm = "ngForm" (ngSubmit)="addModelRecord(modelForm.value)" enctype="multipart/form-data">
+    <div class="dropdown dropleft float-left">
+              <div class="form-group">
+                <label for="name">Model Name: </label>
+                <input type="text" class="form-control" name="name" id="name" ngModel required>
+              </div>
+              <a href="#otherDetails" class="btn btn-info" data-toggle="collapse">Other Details</a>
+              <div id="otherDetails" class="collapse">
+                  <div class="form-group">
+                      <label for="name">Color: </label>
+                      <input type="text" class="form-control" name="color" id="color" ngModel >
+                  </div>
+                  <div class="form-group">
+                        <label for="name">Manufacturing Year: </label>
+                        <input type="text" class="form-control" name="year" id="year" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="name">Registration Number: </label>
+                      <input type="text" class="form-control" name="reg_no" id="reg_no" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="name">Note: </label>
+                      <input type="text" class="form-control" name="note" id="note" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="name">Image1: </label>
+                      <input type="file" (change)="onFileSelected($event)" class="form-control-file" name="image1" id="image1" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="name">Image2: </label>
+                      <input type="file" class="form-control-file" name="image2" id="image2" ngModel>
+                  </div>
+                </div>
+              <button type="submit" [disabled]="!modelForm.form.valid" class="btn btn-success">Submit</button>
+    </div>
+    <div class="dropdown dropleft float-right">
+        <label class="control-label" for="manu_id">Manufacturer</label>
+        <select id="manu_id" class="form-control" name="manu_id" ngModel required>
+          <option *ngFor="let manu of model" [value]="manu.id">{{manu.name}}</option>
+        </select>
+    </div>
+</form>
+</div>

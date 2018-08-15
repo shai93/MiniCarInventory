@@ -1,0 +1,6 @@
+
+CREATE TABLE `manufacturer` (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(100) NOT NULL,
+  `created_at` TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

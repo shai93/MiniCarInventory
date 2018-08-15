@@ -1,0 +1,64 @@
+<table id="viewInventory">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Manufacturer</th>
+        <th>Model</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of model | keyvalue" (click)="openLg(content,data)">
+            <td>{{data.key}}</td>
+            <td>{{keyvalue}}</td>
+            <td>{{data.model}}</td>
+          </tr>
+    </tbody>
+  </table>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title">{{modelName}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <table>
+              <tr>
+                <th>Manufacturer Name: </th>
+                <td>{{manuName}}</td>
+              </tr>
+              <tr>
+                <th>Color: </th>
+                <td>{{color}}</td>
+              </tr>
+              <tr>
+                <th>Manufacturing Year:</th>
+                <td>{{year}}</td>
+              </tr>
+              <tr>
+                <th>Registration Number:</th>
+                <td>{{reg_no}}</td>
+              </tr>
+              <tr>
+                <th>Note:</th>
+                <td>{{note}}</td>
+              </tr>
+              <tr>
+                <th>Image1:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Image2:</th>
+                <td></td>
+              </tr>
+          </table>
+      </div>
+      <div class="modal-footer">
+        <form class="form-inline" #soldForm = "ngForm" (ngSubmit)="sold(model_id)">
+          <button type="submit" class="btn btn-danger">Sold</button>
+        </form>
+        <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+      </div>
+  </ng-template>
+
