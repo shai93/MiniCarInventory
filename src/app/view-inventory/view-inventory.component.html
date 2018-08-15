@@ -7,9 +7,9 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of model | keyvalue" (click)="openLg(content,data)">
-            <td>{{data.key}}</td>
-            <td>{{keyvalue}}</td>
+        <tr *ngFor="let data of model" (click)="openLg(content,data)">
+            <td></td>
+            <td>{{data.manu}}</td>
             <td>{{data.model}}</td>
           </tr>
     </tbody>
